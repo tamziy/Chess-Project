@@ -33,16 +33,28 @@ int Square::get(bool &o, Color &c, Piece &p) {
 //Printing square information
 void Square::print() {
   if (occupied) {
-    cout << "Square is occupied with a " << color << " " << piece << endl;
+    cout << color << piece << endl;
   } else {
     cout << "Square is unoccupied" << endl;
   }
 }
 
+/**
+ 
+  Chessboard
 
+**/
+int Chessboard::place(int x, int y, Color c, Piece p) {
 
+}
 
+int Chessboard::get(int x, int y, Color &c, Piece &p) {
 
+}
+
+void Chessboard::print() {
+
+}
 
 
 

@@ -28,10 +28,11 @@ public:
   void print();
 };
 
+// Forward Declaration
 class ChessboardIterator;
 
 class Chessboard {
-  // make the container iterator friendly
+  // Make the container iterator friendly
   typedef ChessboardIterator iterator;
 
 private:
@@ -42,7 +43,7 @@ public:
 
   Chessboard() {} // Square does all the initialization
 
-  // return an x,y square from chessboard
+  // Return an x,y square from chessboard
   Square square(int x, int y) {
     // fill out
   }
