@@ -1,32 +1,30 @@
-// see for background
-//  https://users.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterator-define.html
-
 #include <iostream>
 #include <iterator>
 using namespace std;
 
 // define separate containers for Color, Piece (enums recommended)
-enum Color { White, Black };
-enum Piece {King, Queen, Rook, Knight, Bishop, Pawn };
+enum Color { White, Black, UndefinedColor };
+enum Piece { King, Queen, Rook, Knight, Bishop, Pawn, UndefinedPiece };
 
-// a chessboard contains squares
+// Squares for the Chessboard Game
 class Square {
+
 private:
   Color color;
   Piece piece;
   bool occupied;
 
 public:
-  Square() { // default, square unoccupied
-    // fill out
-  }
-  Square(Color c, Piece p) { // an occupied square
-    // fill out
-  }
-  int get(bool &o, Color &c, Piece &p) {
-    // fill out
-  }
+  // default, square unoccupied
+  Square(); 
+    
+  // an occupied square
+  Square(Color c, Piece p);
 
+  // information about the square
+  int get(bool &o, Color &c, Piece &p);
+
+  // printing out information about the square
   void print();
 };
 
