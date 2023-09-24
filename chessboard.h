@@ -6,6 +6,8 @@
 using namespace std;
 
 // define separate containers for Color, Piece (enums recommended)
+enum Color { White, Black };
+enum Piece {King, Queen, Rook, Knight, Bishop, Pawn };
 
 // a chessboard contains squares
 class Square {
