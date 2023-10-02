@@ -1,74 +1,47 @@
-// chessboard.cpp
+/**
+ * Author: Tam Le
+ * UIN: 674428071
+ * File: chessboard.cpp
+ * Project: Chessboard Project for CS 341
+ * Description:
+ * A C++ project that displays an 8x8 chessboard
+ * with an iterator over the chessboard. The view
+ * of the board is traditional view.
+*/
 
 #include "chessboard.h"
 
 /**
  
-  Square
+  Chessboard Iterator
 
 **/
 
-//Default Square
-Square::Square() {
-  color = UndefinedColor;
-  piece = UndefinedPiece;
-  occupied = false;
-}
-
-//Occupied Square
-Square::Square(Color c, Piece p) {
-  color = c;
-  piece = p;
-  occupied = true;
-}
-
-//Information about the square
-int Square::get(bool &o, Color &c, Piece &p) {
-  o = occupied;
-  c = color;
-  p = piece;
-  return 0;
-}
-
-//Printing square information
-void Square::print() {
-  if (occupied) {
-    cout << color << piece << endl;
-  } else {
-    cout << "Square is unoccupied" << endl;
-  }
-}
-
-/**
- 
-  Chessboard
-
-**/
-int Chessboard::place(int x, int y, Color c, Piece p) {
-
-}
-
-int Chessboard::get(int x, int y, Color &c, Piece &p) {
-
-}
-
-void Chessboard::print() {
-
-}
-
-
-
-// define containers for color mappings (2 colors) and piece mappings (6 pieces)
-
+//Function to initialize and return the iterator pointing to the beginning of the chessboard
 ChessboardIterator Chessboard::begin() {
-  // fill out
+  return ChessboardIterator(*this, 0);
 }
 
+//Function to initialize and return the iterator pointing to the end of the chessboard
 ChessboardIterator Chessboard::end() {
-  // fill out
+  return ChessboardIterator(*this, 64);
 }
 
-// print the chessboard with white at the bottom (traditional view)
+//Function to print the chessboard with white at the bottom (traditional view)
 void Chessboard::print() {
-  // fill out
+    // Loop through the board using the iterator
+    for (ChessboardIterator theStart = begin(), theEnd = end(); theStart != theEnd; ++theStart) {
+        int x, y;
+        if (theStart.xy(x, y) == 1) { // Check if the position is valid
+            Square currentSquare = *theStart;
+            
+            //print the details of the currentSquare
+            currentSquare.print();
+            
+            // New line after each row
+            if (x == 7) {
+                std::cout << std::endl;
+            }
+        }
+    }
 }

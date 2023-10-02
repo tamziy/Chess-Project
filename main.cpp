@@ -1,11 +1,20 @@
-// see for background
-//  https://users.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterator-define.html
+/**
+ * Author: Tam Le
+ * UIN: 674428071
+ * File: main.cpp
+ * Project: Chessboard Project for CS 341
+ * Description:
+ * A C++ project that displays an 8x8 chessboard
+ * with an iterator over the chessboard. The view
+ * of the board is traditional view.
+*/
 
 #include "chessboard.h"
 #include <iostream>
+using namespace std;
 
 int main() {
-  std::cout << "Hello World!\n";
+  cout << "Hello World!\n";
   Chessboard chessboard;
 
   chessboard.place(0, 0, White, Rook);
@@ -58,5 +67,7 @@ int main() {
   cout << "Testing place everything ok: "
        << chessboard.place(0, 2, coPlace, piPlace) << endl;
   chessboard.print();
+
+  return 0;
 }
 
